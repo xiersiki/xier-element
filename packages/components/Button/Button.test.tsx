@@ -1,21 +1,16 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 import Button from "./Button.vue";
 import type { ButtonSize, ButtonType } from "./type";
 
 describe("Button.vue", () => {
-	// 默认 props
-	const defaultProps = {
-		loadingIcon: "spinner", // 必传：你的 Button 定义了 required 的 prop
-	};
-
+	const onClick = vi.fn();
 	// Props: type
 	it("should have the correct type class when type prop is set", () => {
 		const types: ButtonType[] = ["primary", "success", "warning", "danger", "info"];
 		types.forEach((type) => {
 			const wrapper = mount(Button, {
 				props: {
-					...defaultProps,
 					type,
 				},
 			});
@@ -29,7 +24,6 @@ describe("Button.vue", () => {
 		sizes.forEach((size) => {
 			const wrapper = mount(Button, {
 				props: {
-					...defaultProps,
 					size,
 				},
 			});
@@ -47,7 +41,6 @@ describe("Button.vue", () => {
 	])("should have the correct class when prop %s is set to true", (prop, className) => {
 		const wrapper = mount(Button, {
 			props: {
-				...defaultProps,
 				[prop]: true,
 			},
 			global: {
@@ -63,7 +56,6 @@ describe("Button.vue", () => {
 	it("should have the correct native type attribute when nativeType prop is set", () => {
 		const wrapper = mount(Button, {
 			props: {
-				...defaultProps,
 				nativeType: "submit",
 				tag: "button", // ✅ 注意：必须显式设置 tag 为 button 才能渲染成 <button>
 			},
@@ -76,7 +68,6 @@ describe("Button.vue", () => {
 	it("should render the custom tag when tag prop is set", () => {
 		const wrapper = mount(Button, {
 			props: {
-				...defaultProps,
 				tag: "a",
 			},
 		});
@@ -87,7 +78,6 @@ describe("Button.vue", () => {
 	it("should emit a click event when the button is clicked", async () => {
 		const wrapper = mount(Button, {
 			props: {
-				...defaultProps,
 			},
 		});
 		await wrapper.trigger("click");

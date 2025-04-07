@@ -29,7 +29,7 @@ export interface ButtonProps {
     icon?: string,            // 按钮中显示的图标名称
     nativeType?: NativeType,  // 原生按钮的 type 属性，影响表单中按钮的行为
     loading?: boolean,        // 是否显示加载中状态，通常会显示加载图标并禁用按钮
-    loadingIcon: string,
+    loadingIcon?: string,
     disabled?: boolean,       // 是否禁用按钮，禁用后按钮不可点击
     plain?: boolean,          // 是否使用朴素按钮，朴素按钮通常只有边框和文字，背景色较淡
     autofocus?: boolean,      // 是否自动获取焦点，渲染后按钮会立即获得焦点
