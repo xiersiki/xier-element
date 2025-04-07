@@ -1,2 +1,144 @@
-/** index.css */
-@import "./reset.css";
+/* 导入重置样式，用于统一不同浏览器的默认样式 */
+@import './reset.css';
+
+:root {
+    /* 基础颜色变量 */
+    --xr-color-white: #ffffff;
+    /* 纯白色 */
+    --xr-color-black: #000000;
+    /* 纯黑色 */
+    /* 主题颜色映射，定义了各种状态颜色 */
+    --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+
+    /* 背景颜色系列 */
+    --xr-bg-color: #ffffff;
+    /* 默认背景色 */
+    --xr-bg-color-page: #f2f3f5;
+    /* 页面背景色 */
+    --xr-bg-color-overlay: #ffffff;
+    /* 覆盖层背景色 */
+
+    /* 文本颜色系列 */
+    --xr-text-color-primary: #303133;
+    /* 主要文本颜色 */
+    --xr-text-color-regular: #606266;
+    /* 常规文本颜色 */
+    --xr-text-color-secondary: #909399;
+    /* 次要文本颜色 */
+    --xr-text-color-placeholder: #a8abb2;
+    /* 占位符文本颜色 */
+    --xr-text-color-disabled: #c0c4cc;
+    /* 禁用状态文本颜色 */
+
+    /* 边框颜色系列 */
+    --xr-border-color: #dcdfe6;
+    /* 标准边框颜色 */
+    --xr-border-color-light: #e4e7ed;
+    /* 浅色边框 */
+    --xr-border-color-lighter: #ebeef5;
+    /* 更浅的边框颜色 */
+    --xr-border-color-extra-light: #f2f6fc;
+    /* 特别浅的边框颜色 */
+    --xr-border-color-dark: #d4d7de;
+    /* 深色边框 */
+    --xr-border-color-darker: #cdd0d6;
+    /* 更深的边框颜色 */
+
+    /* 填充颜色系列 */
+    --xr-fill-color: #f0f2f5;
+    /* 标准填充色 */
+    --xr-fill-color-light: #f5f7fa;
+    /* 浅色填充 */
+    --xr-fill-color-lighter: #fafafa;
+    /* 更浅的填充色 */
+    --xr-fill-color-extra-light: #fafcff;
+    /* 特别浅的填充色 */
+    --xr-fill-color-dark: #ebedf0;
+    /* 深色填充 */
+    --xr-fill-color-darker: #e6e8eb;
+    /* 更深的填充色 */
+    --xr-fill-color-blank: #ffffff;
+    /* 空白填充色 */
+
+    /* 循环生成各种主题颜色的亮色和暗色变体 */
+    @each $val, $color in var(--colors) {
+        /* 定义基础主题颜色 */
+        --xr-color-$(val): $(
+            color
+        );
+
+    /* 为每个主题颜色生成 6 种不同亮度的亮色变体 (30%-90%的白色混合) */
+    @for $i from 3 to 9 {
+        --xr-color-$(val)-light-$(i): mix(#fff, $(
+                color),
+            0.$(
+            i)
+        );
+}
+
+/* 为每个主题颜色生成暗色变体 (20%的黑色混合) */
+--xr-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+}
+
+/* 边框相关变量 */
+--xr-border-width: 1px;
+/* 边框宽度 */
+--xr-border-style: solid;
+/* 边框样式 */
+--xr-border-color-hover: var(--xr-text-color-disabled);
+/* 悬停时的边框颜色 */
+--xr-border: var(--xr-border-width) var(--xr-border-style) var(--xr-border-color);
+/* 标准边框简写 */
+
+/* 边框圆角 */
+--xr-border-radius-base: 4px;
+/* 基础圆角 */
+--xr-border-radius-small: 2px;
+/* 小圆角 */
+--xr-border-radius-round: 20px;
+/* 圆形按钮样式的圆角 */
+--xr-border-radius-circle: 100%;
+/* 完全圆形的圆角 */
+
+/* 字体相关变量 */
+--xr-font-size-extra-large: 20px;
+/* 特大字号 */
+--xr-font-size-large: 18px;
+/* 大字号 */
+--xr-font-size-medium: 16px;
+/* 中等字号 */
+--xr-font-size-base: 14px;
+/* 基础字号 */
+--xr-font-size-small: 13px;
+/* 小字号 */
+--xr-font-size-extra-small: 12px;
+/* 特小字号 */
+
+/* 字体族 */
+--xr-font-family: 'Helvetica Neue',
+Helvetica,
+'PingFang SC',
+'Hiragino Sans GB',
+'Microsoft YaHei',
+'\5fae\8f6f\96c5\9ed1',
+/* 微软雅黑的Unicode编码 */
+Arial,
+sans-serif;
+
+--xr-font-weight-primary: 500;
+/* 主要文本的字重 */
+
+/* 禁用状态的样式变量 */
+--xr-disabled-bg-color: var(--xr-fill-color-light);
+/* 禁用状态的背景色 */
+--xr-disabled-text-color: var(--xr-text-color-placeholder);
+/* 禁用状态的文本颜色 */
+--xr-disabled-border-color: var(--xr-border-color-light);
+/* 禁用状态的边框颜色 */
+
+/* 动画相关变量 */
+--xr-transition-duration: 0.4s;
+/* 标准过渡动画持续时间 */
+--xr-transition-duration-fast: 0.2s;
+/* 快速过渡动画持续时间 */
+}

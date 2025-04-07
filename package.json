@@ -4,26 +4,32 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"todo\"",
+    "test": "pnpm --filter @xier-element/components run test",
     "play:dev": "pnpm --filter @xier-element/play run dev ",
+    "story": "pnpm --filter @xier-element/play run storybook ",
     "docs:dev": "pnpm --filter @xier-element/docs run dev",
-    "docs:build": "pnpm --filter @xier-element/docs run build"
+    "docs:build": "pnpm --filter @xier-element/docs run build",
+    "build-storybook": "storybook build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.7.1",
   "dependencies": {
-    "xier-element": "workspace:^",
-    "@xier-element/hooks": "workspace:^",
-    "@xier-element/theme": "workspace:^",
-    "@xier-element/utils": "workspace:^",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "@tsconfig/node18": "^18.2.4",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.11.20",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/tsconfig": "^0.5.1",
+    "@xier-element/hooks": "workspace:^",
+    "@xier-element/theme": "workspace:^",
+    "@xier-element/utils": "workspace:^",
     "lodash-es": "^4.17.21",
     "postcss-color-mix": "^1.1.0",
     "postcss-each": "^1.1.0",
@@ -34,6 +40,17 @@
     "vite": "^5.1.4",
     "vitest": "^1.4.0",
     "vue": "^3.4.19",
-    "vue-tsc": "^1.8.27"
+    "vue-tsc": "^1.8.27",
+    "xier-element": "workspace:^"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "8.6.12",
+    "@storybook/addon-interactions": "8.6.12",
+    "@storybook/addon-onboarding": "8.6.12",
+    "@storybook/blocks": "8.6.12",
+    "@storybook/test": "8.6.12",
+    "@storybook/vue3": "8.6.12",
+    "@storybook/vue3-vite": "8.6.12",
+    "sass": "^1.86.3"
   }
 }

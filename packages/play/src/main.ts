@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 import XierElement from 'xier-element'
 // 创建 Vue 应用实例

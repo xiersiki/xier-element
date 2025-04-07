@@ -1,0 +1,126 @@
+.xr-tag.is-light {
+    --xr-tag-font-weight: var(--xr-font-weight-primary);
+    --xr-tag-text-color: var(--xr-color-primary);
+    --xr-tag-bg-color: var(--xr-color-primary-light-9);
+    --xr-tag-border-color: var(--xr-color-primary-light-5);
+}
+
+@each $val in primary, success, warning, info, danger {
+
+    //light模式不同type下的样式
+    .xr-tag--#{$val}.is-light {
+        --xr-tag-text-color: var(--xr-color-#{$val});
+        --xr-tag-bg-color: var(--xr-color-#{$val}-light-9);
+        --xr-tag-border-color: var(--xr-color-#{$val}-light-5);
+        --xr-tag-hover-bg-color: var(--xr-color-#{$val}-light-3);
+        --xr-tag-hover-text-color: var(--xr-color-white);
+    }
+
+    //朴素模式下的不同type的样式
+    .xr-tag--#{$val}.is-plain {
+        --xr-tag-text-color: var(--xr-color-#{$val});
+        --xr-tag-bg-color: var(--xr-fill-color-blank);
+        --xr-tag-border-color: var(--xr-color-#{$val}-light-5);
+        --xr-tag-hover-bg-color: var(--xr-color-#{$val}-light-3);
+        --xr-tag-hover-text-color: var(--xr-color-white);
+    }
+
+    //dark模式下的不同type的样式
+    .xr-tag--#{$val}.is-dark {
+        --xr-tag-text-color: var(--xr-color-white);
+        --xr-tag-bg-color: var(--xr-color-#{$val});
+        --xr-tag-border-color: var(--xr-color-#{$val});
+        --xr-tag-hover-bg-color: var(--xr-color-#{$val}-light-3);
+        --xr-tag-hover-text-color: var(--xr-color-white);
+    }
+
+    //dark模式下的不同type的样式
+    .xr-tag--#{$val}.xr-icon-close {
+        --xr-tag-text-color: var(--xr-color-white);
+        --xr-tag-bg-color: var(--xr-color-#{$val});
+        --xr-tag-border-color: var(--xr-color-#{$val});
+        --xr-tag-hover-bg-color: var(--xr-color-#{$val}-light-3);
+        --xr-tag-hover-text-color: var(--xr-color-white);
+    }
+
+}
+
+// @each $val in medium, small, mini {
+//     .xr-tag--#{$val} {
+//         --xr-tag-size: var()
+//     }
+// }
+
+.xr-tag {
+
+    background-color: var(--xr-tag-bg-color);
+    color: var(--xr-tag-text-color);
+    font-weight: var(--xr-tag-font-weight);
+    border: 0.8px solid var(--xr-tag-border-color);
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 22px;
+    border-radius: 4px;
+    white-space: nowrap;
+    cursor: default;
+    height: 32px;
+
+    &.is-hit {
+        border-width: 1.5px;
+        border-style: solid;
+    }
+
+    &.xr-tag--medium {
+        --xr-tag-size: 28px;
+        --xr-tag-close-size: 14px;
+        height: var(--xr-tag-size);
+        line-height: 26px;
+    }
+
+    &.xr-tag--small {
+        --xr-tag-size: 24px;
+        --xr-tag-close-size: 12px;
+        height: var(--xr-tag-size);
+        padding: 0px 8px;
+        line-height: 22px;
+    }
+
+    &.xr-tag--mini {
+        --xr-tag-size: 20px;
+        --xr-tag-close-size: 10px;
+        height: var(--xr-tag-size);
+        padding: 0px 5px;
+        line-height: 19px;
+    }
+
+    // 为默认尺寸设置关闭图标大小
+    --xr-tag-close-size: 16px;
+}
+
+
+.xr-icon-close {
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 3px;
+    cursor: pointer;
+    height: var(--xr-tag-close-size);
+    width: var(--xr-tag-close-size);
+    line-height: var(--xr-tag-close-size);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+        border-radius: 50%;
+        background-color: var(--xr-tag-hover-bg-color);
+        color: var(--xr-tag-hover-text-color);
+    }
+}
