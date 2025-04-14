@@ -1,0 +1,47 @@
+<template>
+  <div class="collapse-item" :class="{ 'is-active': isActive }" @click="toggle">
+    <div class="collapse-header">
+      <slot name="header"></slot>
+    </div>
+    <transition name="collapse">
+      <div class="collapse-content" v-show="isActive">
+        <slot name="content"></slot>
+      </div>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    toggle() {
+      this.isActive = !this.isActive;
+    }
+  }
+};
+</script>
+
+<style scoped>
+.collapse-item {
+  cursor: pointer;
+}
+.collapse-header {
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+.collapse-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.collapse-enter-active, .collapse-leave-active {
+  transition: opacity 0.3s ease;
+}
+.collapse-enter, .collapse-leave-to {
+  opacity: 0;
+}
+</style>

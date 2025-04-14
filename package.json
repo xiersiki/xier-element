@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
+    "dev": "pnpm --filter @xier-element/play run dev ",
     "test": "pnpm --filter @xier-element/components run test",
     "play:dev": "pnpm --filter @xier-element/play run dev ",
     "story": "pnpm --filter @xier-element/play run storybook ",
