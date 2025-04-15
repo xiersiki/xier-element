@@ -1,0 +1,112 @@
+.xr-alert {
+    --xr-alert-padding: 8px 16px;
+    --xr-alert-border-radius-base: var(--xr-border-radius-base);
+    --xr-alert-bg-color: var(--xr-color-white);
+    --xr-alert-title-font-size: 14px;
+    --xr-alert-title-font-size-with-desc: 16px;
+    --xr-alert-desc-font-size: 14px;
+    --xr-alert-text-color: var(--xr-text-color-primary);
+    --xr-alert-top-margin: 20px;
+    --xr-alert-icon-size: 16px;
+    --xr-alert-icon-margin: 8px;
+    --xr-alert-big-icon-size: 28px;
+    --xr-alert-big-icon-margin: 12px;
+}
+
+.xr-alert {
+    padding: var(--xr-alert-padding);
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: var(--xr-alert-border-radius-base);
+    position: relative;
+    background-color: var(--xr-alert-bg-color);
+    overflow: hidden;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    transition: opacity var(--xr-transition-duration);
+    margin-top: var(--xr-alert-top-margin);
+
+    .xr-alert__icon {
+        color: var(--xr-alert-text-color);
+        font-size: var(--xr-alert-icon-size);
+        width: var(--xr-alert-icon-size);
+        margin-right: var(--xr-alert-icon-margin);
+
+        &.big-icon {
+            font-size: var(--xr-alert-big-icon-size);
+            width: var(--xr-alert-big-icon-size);
+            margin-right: var(--xr-alert-big-icon-margin);
+        }
+    }
+
+    .xr-alert__content {
+        color: var(--xr-alert-text-color);
+        vertical-align: text-top;
+
+        .xr-alert__title {
+            font-size: var(--xr-alert-title-font-size);
+            line-height: 24px;
+
+            &.with-desc {
+                font-size: var(--xr-alert-title-font-size-with-desc);
+            }
+        }
+
+        .xr-alert__description {
+            font-size: var(--xr-alert-desc-font-size);
+            margin: 0;
+        }
+
+        .xr-alert__close {
+            font-size: var(--xr-alert-close-font-size);
+            opacity: 1;
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            cursor: pointer;
+
+            :deep(.xr-icon) {
+                vertical-align: top;
+            }
+        }
+
+        &.xr-alert__light {
+            .xr-alert__close {
+                color: var(--xr-text-color-placeholder);
+            }
+        }
+
+        &.xr-alert__dark {
+            .xr-alert__close {
+                color: var(--xr-color-white);
+            }
+        }
+    }
+
+    &.text-center {
+        justify-content: center;
+
+        span,
+        p {
+            text-align: center;
+        }
+    }
+}
+
+.xr-alert-fade-enter-from,
+.xr-alert-fade-leave-to {
+    opacity: 0;
+}
+
+@each $val in success, warning, info, danger {
+    .xr-alert__#{$val}.xr-alert__light {
+        --xr-alert-text-color: var(--xr-color-#{$val});
+        --xr-alert-bg-color: var(--xr-color-#{$val}-light-9);
+    }
+
+    .xr-alert__#{$val}.xr-alert__dark {
+        --xr-alert-text-color: var(--xr-color-white);
+        --xr-alert-bg-color: var(--xr-color-#{$val});
+    }
+}
