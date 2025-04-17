@@ -47,7 +47,6 @@ const Template: StoryFn<typeof XrAlert> = (args) => ({
     template: `
     <xr-alert v-bind="args">
       <template #title v-if="args.title">{{ args.title }}</template>
-      <template v-if="args.description"></template>
     </xr-alert>
   `,
 });
