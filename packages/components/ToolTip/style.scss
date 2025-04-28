@@ -1,0 +1,91 @@
+.xr-tooltip {
+    --xr-popover-bg-color: var(--xr-bg-color-overlay);
+    --xr-popover-font-size: var(--xr-font-size-base);
+    --xr-popover-border-color: var(--xr-border-color-lighter);
+    --xr-popover-padding: 12px;
+    --xr-popover-border-radius: 4px;
+    display: inline-block;
+}
+
+.xr-tooltip {
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity var(--xr-transition-duration);
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+    }
+
+    .xr-tooltip__popper {
+        background: var(--xr-popover-bg-color);
+        border-radius: var(--xr-popover-border-radius);
+        border: 1px solid var(--xr-popover-border-color);
+        padding: var(--xr-popover-padding);
+        color: var(--xr-text-color-regular);
+        line-height: 1.4;
+        text-align: justify;
+        font-size: var(--xr-popover-font-size);
+        box-shadow: var(--xr-box-shadow-light);
+        word-break: break-all;
+        box-sizing: border-box;
+        z-index: 1000;
+
+        #arrow,
+        #arrow::before {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            box-sizing: border-box;
+            background: var(--xr-popover-bg-color);
+        }
+
+        #arrow {
+            visibility: hidden;
+        }
+
+        #arrow::before {
+            visibility: visible;
+            content: '';
+            transform: rotate(45deg);
+        }
+
+        &[data-popper-placement^='top']>#arrow {
+            bottom: -5px;
+        }
+
+        &[data-popper-placement^='bottom']>#arrow {
+            top: -5px;
+        }
+
+        &[data-popper-placement^='left']>#arrow {
+            right: -5px;
+        }
+
+        &[data-popper-placement^='right']>#arrow {
+            left: -5px;
+        }
+
+        &[data-popper-placement^='top']>#arrow::before {
+            border-right: 1px solid var(--xr-popover-border-color);
+            border-bottom: 1px solid var(--xr-popover-border-color);
+        }
+
+        &[data-popper-placement^='bottom']>#arrow::before {
+            border-left: 1px solid var(--xr-popover-border-color);
+            border-top: 1px solid var(--xr-popover-border-color);
+        }
+
+        &[data-popper-placement^='left']>#arrow::before {
+            border-right: 1px solid var(--xr-popover-border-color);
+            border-top: 1px solid var(--xr-popover-border-color);
+        }
+
+        &[data-popper-placement^='right']>#arrow::before {
+            border-left: 1px solid var(--xr-popover-border-color);
+            border-bottom: 1px solid var(--xr-popover-border-color);
+        }
+    }
+}

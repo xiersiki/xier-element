@@ -26,7 +26,6 @@ describe("Alert.vue", () => {
         // close icon
         const iconElement = wrapper.findAllComponents(Icon)[1];
         expect(iconElement.exists()).toBeTruthy();
-        console.log('------------wrapper.html---------------', wrapper.html());
 
         expect(iconElement.attributes("icon")).toBe("xmark");
 
