@@ -203,8 +203,6 @@ defineExpose<TooltipInstance>({
             <slot></slot>
         </div>
         <slot name="default" v-else></slot>
-        <!-- 额外内容 -->
-        <!-- <slot name="default"></slot> -->
         <!-- poper弹出框 -->
         <transition :name="transition" @after-leave="destroyPopperInstance">
             <div class="xr-tooltip__popper" ref="popperNode" v-if="visible" v-on="dropdownEvents">
