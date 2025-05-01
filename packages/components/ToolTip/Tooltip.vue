@@ -89,11 +89,13 @@ function toggleProper() {
     visible.value ? closeFinal() : openFinal()
 }
 function attachEvents() {
+    //events控制触发器的事件，outerEvents控制触发器外部的事件，dropdownEvents控制弹出层的事件
     if (props.disabled || props.manual) return
     if (props.trigger === 'hover') {
         events.value['mouseenter'] = openFinal
         outerEvents.value['mouseleave'] = closeFinal
         dropdownEvents.value['mouseleave'] = closeFinal
+        dropdownEvents.value['mouseenter'] = openFinal
         return
     }
     // 点击触发的情况是再点击一次修改可见性
@@ -184,6 +186,7 @@ useClickOutside(outsideTarget, () => {
     if (props.trigger === 'click' || props.trigger === 'contextmenu') {
         closeFinal();
     }
+    emits('click-outside')
 })
 onUnmounted(() => {
     destroyPopperInstance()

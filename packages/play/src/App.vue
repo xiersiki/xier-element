@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { XrPopconfirm, XrButton } from 'xier-element';
+import { XrDropDown,XrDropDownMenu,XrDropDownItem} from 'xier-element';
 
 
 
@@ -9,9 +9,18 @@ import { XrPopconfirm, XrButton } from 'xier-element';
 <template>
   <div class="container">
     <div class="display">
-      <XrPopconfirm title="是否要关闭？" confirm-button-text='好的' cancel-button-text='不用了' icon="circle-info" iconColor="red">
-        <XrButton>删除</XrButton>
-      </XrPopconfirm>
+      <XrDropDown>
+        <span class="el-dropdown-link">
+          Dropdown List
+          >
+        </span>
+        <template #dropdown>
+          <XrDropDownMenu>
+            <XrDropDownItem>2</XrDropDownItem>
+            <XrDropDownItem>3</XrDropDownItem>
+          </XrDropDownMenu>
+        </template>
+      </XrDropDown>
     </div>
   </div>
 </template>

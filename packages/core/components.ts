@@ -8,7 +8,10 @@ import {
     XrCollapseItem,
     XrAlert,
     XrTooltip,
-    XrPopconfirm
+    XrPopconfirm,
+    XrDropDown,
+    XrDropDownMenu,
+    XrDropDownItem,
 } from "@xier-element/components";
 import type { Plugin } from "vue";
 
@@ -22,5 +25,8 @@ export default
         XrCollapseItem,
         XrAlert,
         XrTooltip,
-        XrPopconfirm
+        XrPopconfirm,
+        XrDropDown,
+        XrDropDownMenu,
+        XrDropDownItem
     ] as Plugin[];
