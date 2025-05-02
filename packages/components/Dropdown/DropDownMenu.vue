@@ -4,11 +4,11 @@ defineOptions({
 })
 </script>
 <template>
-    <div class="Xr-DropDownMenu">
+    <div class="xr-dropdown__menu">
         <slot></slot>
     </div>
 </template>
 
 <style scoped lang='scss'>
-
+@use './style.scss'
 </style>

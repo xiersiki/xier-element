@@ -9,7 +9,7 @@ export interface DropDownProps {
     splitButton?: boolean; // 下拉触发元素呈现为按钮组
     disabled?: boolean; // 是否禁用
     placement?: 'top' | 'bottom' | 'left' | 'right'; // 菜单弹出位置
-    trigger?: 'hover' | 'click'; // 触发下拉的行为
+    trigger?: 'hover' | 'click' | 'contextmenu'; // 触发下拉的行为
     triggerKeys?: string[]; // 指定键盘上哪些按键可以触发操作
     hideOnClick?: boolean; // 是否在点击菜单项后隐藏菜单
     showTimeout?: number; // 展开下拉菜单的延时，仅在 trigger 为 hover 时有效
@@ -22,9 +22,9 @@ export interface DropDownProps {
     persistent?: boolean; // 当下拉菜单处于非活动状态且 persistent 为 false 时，下拉菜单将被销毁
 }
 export interface DropDownEmits {
-    click: (value: MouseEvent) => void; // 点击事件
-    command:(value:MouseEvent) => void; // 命令事件
-    visibleChange: (value: boolean) => void; // 可见性变化事件
+    (e:'click',value?:MouseEvent):void // 点击事件
+    (e:'command',value?:MouseEvent):void // 点击事件
+    (e:'visibleChange',value?:boolean):void // 点击事件
 }
 export interface DropDownInstance {
     handleOpen: () => void; // 打开下拉菜单的方法

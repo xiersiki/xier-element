@@ -34,9 +34,10 @@ const _triggerNode = ref<HTMLElement>()
 
 const triggerNode = computed(() => {
     if (props.virtualTriggering) {
+        // console.log('props.virtualRef',props.virtualRef);
         return (props.virtualRef as HTMLElement) ?? _triggerNode.value
-
     } else {
+        // console.log('triggerNode.value',triggerNode.value);
         return _triggerNode.value as HTMLElement
     }
 })
@@ -68,6 +69,7 @@ let closeDebounce: DebouncedFunc<() => void> | void
  * 防止tooltip刚打开就被关闭的情况也就是闪烁的情况
  */
 function openFinal() {
+    console.log('打开弹出层');
     closeDebounce?.cancel();
     openDebounce?.()
 }
@@ -105,7 +107,8 @@ function attachEvents() {
     if (props.trigger === 'contextmenu') {
         events.value['contextmenu'] = (e) => {
             e.preventDefault()
-            openFinal()
+            toggleProper()
+            // openFinal()
         }
     }
 
@@ -128,6 +131,7 @@ function resetEvents() {
 }
 const show: TooltipInstance['show'] = openFinal
 const hide: TooltipInstance['hide'] = function () {
+    console.log('tooltip里面的hide方法调用，关闭弹出层');
     openDebounce?.cancel()
     setVisible(false)
 }
