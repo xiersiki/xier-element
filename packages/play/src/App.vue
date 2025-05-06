@@ -10,20 +10,31 @@ setTimeout(() => {
   // 在 nextTick 内部确保访问的是已填充的 dropdown.value
   dropdown.value.handleClose()
 }, 2000)
+function handleCommand(conmand:string|number|object |undefined){
+  console.log('command',conmand)
 
+}
 </script>
 
 <template>
   <div class="container">
     <div class="display">
-      <XrDropDown ref="dropdown" placement="right" split-button type="primary" trigger="click">
+      <XrDropDown 
+      ref="dropdown" 
+      placement="right" 
+      split-button 
+      type="primary" 
+      trigger="click" 
+      :hide-on-click="false"
+      @command="handleCommand"
+      >
         Dropdown List
         <template #dropdown>
           <XrDropDownMenu>
-            <XrDropDownItem>1231321313</XrDropDownItem>
-            <XrDropDownItem>1231231313213</XrDropDownItem>
-            <XrDropDownItem>1231313213</XrDropDownItem>
-            <XrDropDownItem divided>1231313213</XrDropDownItem>
+            <XrDropDownItem command="a">1231321313</XrDropDownItem>
+            <XrDropDownItem command="b">1231231313213</XrDropDownItem>
+            <XrDropDownItem command="c">1231313213</XrDropDownItem>
+            <XrDropDownItem command="d" divided>1231313213</XrDropDownItem>
           </XrDropDownMenu>
         </template>
       </XrDropDown>

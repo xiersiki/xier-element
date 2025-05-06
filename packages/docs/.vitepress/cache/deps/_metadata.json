@@ -1,79 +1,79 @@
 {
-  "hash": "ffa8ad54",
-  "configHash": "e402ecf7",
-  "lockfileHash": "3f293aa8",
-  "browserHash": "a029e353",
+  "hash": "8be0d600",
+  "configHash": "fdccce2b",
+  "lockfileHash": "3e448a53",
+  "browserHash": "f6e179d3",
   "optimized": {
     "vue": {
       "src": "../../../../../node_modules/.pnpm/vue@3.5.13_typescript@5.8.2/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "d3cb67a9",
+      "fileHash": "17c904a3",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../../node_modules/.pnpm/@vue+devtools-api@7.7.2/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "66b48c94",
+      "fileHash": "008713a8",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+core@10.11.1_vue@3.5.13_typescript@5.8.2_/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "c4916df4",
+      "fileHash": "f3f134f0",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+integrations@10.11._26ec02cd398cd67cc6fe87f2f46a7b30/node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "03e15d0c",
+      "fileHash": "fe7d1e50",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../../node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "6c433971",
+      "fileHash": "fd3a9d37",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../../node_modules/.pnpm/minisearch@6.3.0/node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "30dec05e",
+      "fileHash": "aa07c910",
       "needsInterop": false
     },
     "@vitepress-demo-preview/component": {
       "src": "../../../../../node_modules/.pnpm/@vitepress-demo-preview+com_3ede4c9cf55935c2bb19fe44fe2881be/node_modules/@vitepress-demo-preview/component/dist/preview-component.js",
       "file": "@vitepress-demo-preview_component.js",
-      "fileHash": "08c560e3",
+      "fileHash": "1dc90adc",
       "needsInterop": false
     },
     "@fortawesome/fontawesome-svg-core": {
       "src": "../../../../../node_modules/.pnpm/@fortawesome+fontawesome-svg-core@6.7.2/node_modules/@fortawesome/fontawesome-svg-core/index.mjs",
       "file": "@fortawesome_fontawesome-svg-core.js",
-      "fileHash": "fa260ecc",
+      "fileHash": "27f886a3",
       "needsInterop": false
     },
     "@fortawesome/free-solid-svg-icons": {
       "src": "../../../../../node_modules/.pnpm/@fortawesome+free-solid-svg-icons@6.7.2/node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "file": "@fortawesome_free-solid-svg-icons.js",
-      "fileHash": "ff616a2c",
+      "fileHash": "f329c6d1",
       "needsInterop": false
     },
     "lodash-es": {
       "src": "../../../../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/lodash-es/lodash.js",
       "file": "lodash-es.js",
-      "fileHash": "2b83bf32",
-      "needsInterop": false
-    },
-    "@popperjs/core": {
-      "src": "../../../../../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/index.js",
-      "file": "@popperjs_core.js",
-      "fileHash": "9fb48a4b",
+      "fileHash": "001aeb08",
       "needsInterop": false
     },
     "@fortawesome/vue-fontawesome": {
       "src": "../../../../../node_modules/.pnpm/@fortawesome+vue-fontawesom_0dffa63c46a30535dc47b65774fece1f/node_modules/@fortawesome/vue-fontawesome/index.es.js",
       "file": "@fortawesome_vue-fontawesome.js",
-      "fileHash": "33cd62df",
+      "fileHash": "fe89be6a",
+      "needsInterop": false
+    },
+    "@popperjs/core": {
+      "src": "../../../../../node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/lib/index.js",
+      "file": "@popperjs_core.js",
+      "fileHash": "e7ed296f",
       "needsInterop": false
     }
   },

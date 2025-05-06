@@ -1,6 +1,7 @@
-import type { Component } from 'vue';
-import type { ButtonType,ButtonProps } from '../Button/type'
+import type { Component, ComputedRef } from 'vue';
+import type { ButtonType,ButtonProps,ButtonSize } from '../Button/type'
 export type DropDownSzie = '' | 'small' | 'default' | 'large'
+export type DropdownCommand = string | number;
 export interface DropDownProps {
     type?: ButtonType; // 按钮类型
     size?: DropDownSzie; // 下拉尺寸
@@ -20,10 +21,11 @@ export interface DropDownProps {
     popperOptions?: object; // popper.js 参数
     teleported?: boolean; // 是否将下拉列表插入至 body 元素
     persistent?: boolean; // 当下拉菜单处于非活动状态且 persistent 为 false 时，下拉菜单将被销毁
+    items?: DropDownItemProps[];
 }
 export interface DropDownEmits {
     (e:'click',value?:MouseEvent):void // 点击事件
-    (e:'command',value?:MouseEvent):void // 点击事件
+    (e:'command',value?:string|number|object):void // 点击事件
     (e:'visibleChange',value?:boolean):void // 点击事件
 }
 export interface DropDownInstance {
@@ -50,4 +52,10 @@ export interface DropDownItemProps {
      * 自定义图标
      */
     icon?: string | Component;
+    label?:string
 }
+export interface DropdownContext {
+    handleItemClick(command:string|number |object): void;
+    size: ComputedRef<ButtonSize | void>;
+  }
+  

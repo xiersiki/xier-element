@@ -6,7 +6,7 @@ import {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Eric-UI",
+  title: "xier-element",
   description: "基于Vue3 高仿 element-ui 组件库",
   appearance: false, // 关闭 darkMode @todo 深色模式完成后打开
   base: "/xier-element/",
@@ -39,6 +39,7 @@ export default defineConfig({
         items: [
           { text: "Alert 提示", link: "components/alert" },
           { text: "tooltip弹出", link: "components/tooltip" },
+          { text: "dropDown下拉菜单", link: "components/dropdown" },
         ],
       },
       {

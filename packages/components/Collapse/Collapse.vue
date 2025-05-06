@@ -2,6 +2,9 @@
 import { computed, provide, reactive, ref, toRef, watch } from 'vue';
 import { COLLAPSE_CTX_KEY } from './constants'
 import type { CollapseEmits, CollapseProps, CollapseItemName } from './type';
+defineOptions({
+    name:'XrCollapse'
+})
 const props = withDefaults(defineProps<CollapseProps>(), {
     accordion: false,
     disabled: false,

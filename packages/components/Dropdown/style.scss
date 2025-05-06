@@ -14,13 +14,11 @@
          --xr-popover-padding: 5px 0;
      }
 
-     &.is-disabled>* {
+     &.is-disabled>*{
          color: var(--xr-text-color-placeholder) !important;
          cursor: not-allowed !important;
      }
-
  }
-
  .xr-dropdown__menu {
      list-style-type: none;
      margin: 0;

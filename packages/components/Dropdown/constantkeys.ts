@@ -1,2 +1,2 @@
 export const DROPDOWN_PROPS = Symbol('XrDropDownProps')
-export const TOOLTIP_INSTANCE = Symbol('TOOLTIP_INSTANCE');
+export const DROPDOWN_CTX_KEY = Symbol('DROPDOWN_CTX_KEY');

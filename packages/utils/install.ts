@@ -18,7 +18,7 @@ export function makeInstaller(components: Plugin[]) {
             app.use(c); // 遍历组件数组，调用每个插件的 install 方法
         });
 
-    return install; // 返回 install 函数
+    return { install }; // 返回 install 函数
 }
 
 /**
