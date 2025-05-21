@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { TagProps, TagEmits, TagInstance } from './type'
 import { computed, ref } from 'vue';
-import { XrIcon } from '../Icon';
 // 你的逻辑放这里
 defineOptions({
     name: "XrTag"

@@ -3,7 +3,7 @@ import { createPopper, type Instance } from '@popperjs/core';
 import type { TooltipProps, TooltipEmits, TooltipInstance } from './types';
 import { computed, onUnmounted, ref, watch, watchEffect, type Ref } from 'vue';
 import { debounce, type DebouncedFunc, bind } from 'lodash-es'
-import type { ButtonInstance } from 'xier-element';
+import type { ButtonInstance } from '../Button/type';
 import useEventsToTriggerNode from './useEventTriggerNode';
 import useClickOutside from '../../hooks/useClickOutside';
 // 关于虚拟触发节点的实现

@@ -7,7 +7,7 @@ import DropDownItem from './DropDownItem.vue';
 import XrButtonGroup from '../Button/ButtonGroup.vue';
 import XrButton from '../Button/Button.vue';
 import icon from '../Icon/icon.vue';
-import useDisabledStyle from '../../hooks/usedisabledstyle';
+import useDisabledStyle from '../../hooks/useDisabledStyle';
 defineOptions({
     name: 'XrDropdown',
 })

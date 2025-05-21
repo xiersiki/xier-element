@@ -1,65 +1,65 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import { h, ref } from 'vue';
+import { ref } from 'vue';
 import { XrTooltip } from "xier-element";
 
 // Meta 信息
 const meta: Meta<typeof XrTooltip> = {
-    title: 'Components/Tooltip',
-    component: XrTooltip,
-    tags: ['autodocs'],
-    argTypes: {
-        content: {
-            description: '提示内容',
-            control: 'text',
-        },
-        placement: {
-            description: '气泡位置',
-            control: 'select',
-            options: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'],
-        },
-        trigger: {
-            description: '触发方式',
-            control: 'select',
-            options: ['hover', 'click', 'contextmenu'],
-        },
-        disabled: {
-            description: '是否禁用',
-            control: 'boolean',
-        },
-        manual: {
-            description: '是否手动控制',
-            control: 'boolean',
-        },
-        transition: {
-            description: '过渡动画名称',
-            control: 'text',
-        },
-        showTimeout: {
-            description: '显示延迟(毫秒)',
-            control: { type: 'number', min: 0 },
-        },
-        hideTimeout: {
-            description: '隐藏延迟(毫秒)',
-            control: { type: 'number', min: 0 },
-        },
+  title: 'Components/Tooltip',
+  component: XrTooltip,
+  tags: ['autodocs'],
+  argTypes: {
+    content: {
+      description: '提示内容',
+      control: 'text',
     },
-    args: {
-        content: '这是一个提示文本',
-        placement: 'bottom',
-        trigger: 'hover',
-        disabled: false,
-        manual: false,
-        transition: 'fade',
-        showTimeout: 0,
-        hideTimeout: 200,
+    placement: {
+      description: '气泡位置',
+      control: 'select',
+      options: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'],
     },
-    parameters: {
-        docs: {
-            description: {
-                component: '一个轻量级的提示组件，可通过多种方式触发显示隐藏。',
-            },
-        },
+    trigger: {
+      description: '触发方式',
+      control: 'select',
+      options: ['hover', 'click', 'contextmenu'],
     },
+    disabled: {
+      description: '是否禁用',
+      control: 'boolean',
+    },
+    manual: {
+      description: '是否手动控制',
+      control: 'boolean',
+    },
+    transition: {
+      description: '过渡动画名称',
+      control: 'text',
+    },
+    showTimeout: {
+      description: '显示延迟(毫秒)',
+      control: { type: 'number', min: 0 },
+    },
+    hideTimeout: {
+      description: '隐藏延迟(毫秒)',
+      control: { type: 'number', min: 0 },
+    },
+  },
+  args: {
+    content: '这是一个提示文本',
+    placement: 'bottom',
+    trigger: 'hover',
+    disabled: false,
+    manual: false,
+    transition: 'fade',
+    showTimeout: 0,
+    hideTimeout: 200,
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '一个轻量级的提示组件，可通过多种方式触发显示隐藏。',
+      },
+    },
+  },
 };
 
 export default meta;
@@ -67,26 +67,26 @@ type Story = StoryObj<typeof XrTooltip>;
 
 // 基础用法
 export const Basic: Story = {
-    render: (args) => ({
-        components: { XrTooltip },
-        setup() {
-            return { args };
-        },
-        template: `
+  render: (args) => ({
+    components: { XrTooltip },
+    setup() {
+      return { args };
+    },
+    template: `
       <div style="padding: 50px; text-align: center;">
         <XrTooltip v-bind="args">
           <button>基础提示</button>
         </XrTooltip>
       </div>
     `,
-    }),
+  }),
 };
 
 // 不同位置
 export const Placements: Story = {
-    render: () => ({
-        components: { XrTooltip },
-        template: `
+  render: () => ({
+    components: { XrTooltip },
+    template: `
       <div style="padding: 80px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
         <XrTooltip content="上方提示" placement="top">
           <button>上方</button>
@@ -121,21 +121,21 @@ export const Placements: Story = {
         </XrTooltip>
       </div>
     `,
-    }),
-    parameters: {
-        docs: {
-            description: {
-                story: '通过 `placement` 属性设置 Tooltip 显示的位置：上、下、左、右以及它们的变体。',
-            },
-        },
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story: '通过 `placement` 属性设置 Tooltip 显示的位置：上、下、左、右以及它们的变体。',
+      },
     },
+  },
 };
 
 // 不同触发方式
 export const TriggerTypes: Story = {
-    render: () => ({
-        components: { XrTooltip },
-        template: `
+  render: () => ({
+    components: { XrTooltip },
+    template: `
       <div style="padding: 50px; display: flex; gap: 30px; justify-content: center;">
         <XrTooltip content="悬停时显示" trigger="hover">
           <button>悬停触发</button>
@@ -150,34 +150,34 @@ export const TriggerTypes: Story = {
         </XrTooltip>
       </div>
     `,
-    }),
-    parameters: {
-        docs: {
-            description: {
-                story: '通过 `trigger` 属性设置不同的触发方式：悬停、点击和右键菜单。',
-            },
-        },
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story: '通过 `trigger` 属性设置不同的触发方式：悬停、点击和右键菜单。',
+      },
     },
+  },
 };
 
 // 手动控制
 export const ManualControl: Story = {
-    render: () => ({
-        components: { XrTooltip },
-        setup() {
-            const tooltipRef = ref(null);
+  render: () => ({
+    components: { XrTooltip },
+    setup() {
+      const tooltipRef = ref<{ show: () => void; hide: () => void } | null>(null);
 
-            const showTooltip = () => {
-                tooltipRef.value?.show();
-            };
+      const showTooltip = () => {
+        tooltipRef.value?.show();
+      };
 
-            const hideTooltip = () => {
-                tooltipRef.value?.hide();
-            };
+      const hideTooltip = () => {
+        tooltipRef.value?.hide();
+      };
 
-            return { tooltipRef, showTooltip, hideTooltip };
-        },
-        template: `
+      return { tooltipRef, showTooltip, hideTooltip };
+    },
+    template: `
       <div style="padding: 50px; text-align: center;">
         <XrTooltip ref="tooltipRef" content="手动控制的提示" manual>
           <button>手动控制目标</button>
@@ -189,21 +189,21 @@ export const ManualControl: Story = {
         </div>
       </div>
     `,
-    }),
-    parameters: {
-        docs: {
-            description: {
-                story: '通过设置 `manual` 属性为 `true`，可以使用 `show` 和 `hide` 方法手动控制 Tooltip 的显示和隐藏。',
-            },
-        },
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story: '通过设置 `manual` 属性为 `true`，可以使用 `show` 和 `hide` 方法手动控制 Tooltip 的显示和隐藏。',
+      },
     },
+  },
 };
 
 // 显示延迟
 export const DelayedDisplay: Story = {
-    render: () => ({
-        components: { XrTooltip },
-        template: `
+  render: () => ({
+    components: { XrTooltip },
+    template: `
       <div style="padding: 50px; display: flex; gap: 30px; justify-content: center;">
         <XrTooltip content="即时显示，延迟200ms隐藏" showTimeout="0" hideTimeout="200">
           <button>默认延迟</button>
@@ -218,21 +218,21 @@ export const DelayedDisplay: Story = {
         </XrTooltip>
       </div>
     `,
-    }),
-    parameters: {
-        docs: {
-            description: {
-                story: '通过 `showTimeout` 和 `hideTimeout` 属性设置显示和隐藏的延迟时间（毫秒）。',
-            },
-        },
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story: '通过 `showTimeout` 和 `hideTimeout` 属性设置显示和隐藏的延迟时间（毫秒）。',
+      },
     },
+  },
 };
 
 // 禁用状态
 export const Disabled: Story = {
-    render: () => ({
-        components: { XrTooltip },
-        template: `
+  render: () => ({
+    components: { XrTooltip },
+    template: `
       <div style="padding: 50px; display: flex; gap: 30px; justify-content: center;">
         <XrTooltip content="正常提示">
           <button>正常</button>
@@ -243,21 +243,21 @@ export const Disabled: Story = {
         </XrTooltip>
       </div>
     `,
-    }),
-    parameters: {
-        docs: {
-            description: {
-                story: '通过 `disabled` 属性禁用 Tooltip。',
-            },
-        },
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story: '通过 `disabled` 属性禁用 Tooltip。',
+      },
     },
+  },
 };
 
 // 自定义内容
 export const CustomContent: Story = {
-    render: () => ({
-        components: { XrTooltip },
-        template: `
+  render: () => ({
+    components: { XrTooltip },
+    template: `
       <div style="padding: 50px; text-align: center;">
         <XrTooltip>
           <button>自定义内容</button>
@@ -270,21 +270,21 @@ export const CustomContent: Story = {
         </XrTooltip>
       </div>
     `,
-    }),
-    parameters: {
-        docs: {
-            description: {
-                story: '使用 `content` 插槽自定义 Tooltip 的内容，支持 HTML 和组件。',
-            },
-        },
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story: '使用 `content` 插槽自定义 Tooltip 的内容，支持 HTML 和组件。',
+      },
     },
+  },
 };
 
 // 不同样式
 export const Styled: Story = {
-    render: () => ({
-        components: { XrTooltip },
-        template: `
+  render: () => ({
+    components: { XrTooltip },
+    template: `
       <div style="padding: 50px; text-align: center;">
         <XrTooltip>
           <button>样式化提示</button>
@@ -300,12 +300,12 @@ export const Styled: Story = {
         </XrTooltip>
       </div>
     `,
-    }),
-    parameters: {
-        docs: {
-            description: {
-                story: '使用自定义样式创建更丰富的提示内容。',
-            },
-        },
+  }),
+  parameters: {
+    docs: {
+      description: {
+        story: '使用自定义样式创建更丰富的提示内容。',
+      },
     },
+  },
 };

@@ -2,13 +2,13 @@
 import type { popConfirmEmits, popConfirmInstance, popConfirmProps } from './type';
 import XrButton from '../Button/Button.vue';
 import XrIcon from '../Icon/icon.vue';
-import type { TooltipInstance } from 'xier-element';
+import type { TooltipInstance } from '../ToolTip/types';
 import { ref } from 'vue';
 import XrTooltip from '../ToolTip/Tooltip.vue';
 defineOptions({
     name: 'XrPopconfirm '
 })
-const props = withDefaults(defineProps<popConfirmProps>(), {
+withDefaults(defineProps<popConfirmProps>(), {
     confirmButtonText: "确认",
     cancelButtonText: "取消",
     hideIcon: false,

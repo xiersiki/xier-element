@@ -1,16 +1,13 @@
 {
-  "name": "@xier-element/hooks",
+  "name": "@xier-element/locale",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "module": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.7.1",
-  "dependencies": {
-    "vue3-i18n": "^1.1.5"
-  }
+  "license": "ISC"
 }

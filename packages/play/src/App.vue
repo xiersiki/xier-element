@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { ref } from 'vue';
-import { XrDropDown, XrDropDownMenu, XrDropDownItem, XrIcon } from 'xier-element';
+import { XrDropdown, XrDropdownMenu, XrDropdownItem } from 'xier-element';
 
 // <XrIcon icon="chevron-down"></XrIcon>
 const dropdown = ref()
@@ -10,8 +10,8 @@ setTimeout(() => {
   // 在 nextTick 内部确保访问的是已填充的 dropdown.value
   dropdown.value.handleClose()
 }, 2000)
-function handleCommand(conmand:string|number|object |undefined){
-  console.log('command',conmand)
+function handleCommand(command: string | number | object | undefined) {
+  console.log('command', command)
 
 }
 </script>
@@ -19,25 +19,18 @@ function handleCommand(conmand:string|number|object |undefined){
 <template>
   <div class="container">
     <div class="display">
-      <XrDropDown 
-      ref="dropdown" 
-      placement="right" 
-      split-button 
-      type="primary" 
-      trigger="click" 
-      :hide-on-click="false"
-      @command="handleCommand"
-      >
+      <XrDropdown ref="dropdown" placement="right" split-button type="primary" trigger="click" :hide-on-click="false"
+        @command="handleCommand">
         Dropdown List
         <template #dropdown>
-          <XrDropDownMenu>
-            <XrDropDownItem command="a">1231321313</XrDropDownItem>
-            <XrDropDownItem command="b">1231231313213</XrDropDownItem>
-            <XrDropDownItem command="c">1231313213</XrDropDownItem>
-            <XrDropDownItem command="d" divided>1231313213</XrDropDownItem>
-          </XrDropDownMenu>
+          <XrDropdownMenu>
+            <XrDropdownItem command="a">1231321313</XrDropdownItem>
+            <XrDropdownItem command="b">1231231313213</XrDropdownItem>
+            <XrDropdownItem command="c">1231313213</XrDropdownItem>
+            <XrDropdownItem command="d" divided>1231313213</XrDropdownItem>
+          </XrDropdownMenu>
         </template>
-      </XrDropDown>
+      </XrDropdown>
     </div>
   </div>
 </template>

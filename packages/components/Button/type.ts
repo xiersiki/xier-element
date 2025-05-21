@@ -1,4 +1,4 @@
-import type { Component, ComputedRef, Ref } from "vue" // 导入 Vue 的 Component 类型，用于支持组件作为标签
+import type { Component, Ref } from "vue" // 导入 Vue 的 Component 类型，用于支持组件作为标签
 
 // 定义按钮类型的联合类型
 // primary: 主要按钮，通常用于强调主要操作

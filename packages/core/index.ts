@@ -11,4 +11,5 @@ const installer = makeInstaller(components);
 library.add(fas)
 
 export * from "@xier-element/components";
+export * from '@xier-element/locale'
 export default installer;

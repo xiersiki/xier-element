@@ -10,7 +10,8 @@
     "story": "pnpm --filter @xier-element/play run storybook ",
     "docs:dev": "pnpm --filter @xier-element/docs run dev",
     "docs:build": "pnpm --filter @xier-element/docs run build",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build": "pnpm --filter xier-element build"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +28,10 @@
     "@types/node": "^20.11.20",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vitepress-preview/component": "workspace:^",
     "@vue/tsconfig": "^0.5.1",
     "@xier-element/hooks": "workspace:^",
+    "@xier-element/locale": "workspace:^",
     "@xier-element/theme": "workspace:^",
     "@xier-element/utils": "workspace:^",
     "lodash-es": "^4.17.21",
@@ -38,22 +41,20 @@
     "postcss-for": "^2.1.1",
     "postcss-nested": "^6.0.1",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4",
+    "vite": "^5.2.11",
     "vitest": "^1.4.0",
     "vue": "^3.4.19",
     "vue-tsc": "^1.8.27",
-    "xier-element": "workspace:^",
-    "@vitepress-preview/component": "workspace:^"
+    "vue3-i18n": "^1.1.5",
+    "xier-element": "workspace:^"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "8.6.12",
-    "@storybook/addon-interactions": "8.6.12",
-    "@storybook/addon-onboarding": "8.6.12",
-    "@storybook/blocks": "8.6.12",
-    "@storybook/test": "8.6.12",
-    "@storybook/vue3": "8.6.12",
-    "@storybook/vue3-vite": "8.6.12",
+    "@vue/test-utils": "^2.4.5",
+    "move-file-cli": "3.0.0",
+    "npm-run-all": "4.1.5",
+    "release": "^6.3.1",
+    "rimraf": "^6.0.1",
     "sass": "^1.86.3",
-    "@vue/test-utils": "^2.4.5"
+    "vite-plugin-dts": "^3.7.0"
   }
 }

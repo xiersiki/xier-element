@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import Button from "./Button.vue";
 import ButtonGroup from "./ButtonGroup.vue";
@@ -6,7 +6,7 @@ import { h } from "vue";
 import type { ButtonSize, ButtonType } from "./type";
 
 describe("Button.vue", () => {
-	const onClick = vi.fn();
+	// const onClick = vi.fn();
 	// Props: type
 	it("should have the correct type class when type prop is set", () => {
 		const types: ButtonType[] = ["primary", "success", "warning", "danger", "info"];

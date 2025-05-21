@@ -12,6 +12,7 @@ import {
     XrDropdown,
     XrDropdownMenu,
     XrDropdownItem,
+    XrConfigProvider
 } from "@xier-element/components";
 import type { Plugin } from "vue";
 
@@ -28,5 +29,6 @@ export default
         XrPopconfirm,
         XrDropdown,
         XrDropdownMenu,
-        XrDropdownItem
+        XrDropdownItem,
+        XrConfigProvider
     ] as Plugin[];

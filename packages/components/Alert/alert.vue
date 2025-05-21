@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { computed, ref, useSlots, type ComputedRef } from 'vue';
-import type { AlertProps, AlertType, AlertEmits } from './type';
+import type { AlertProps, AlertEmits } from './type';
 import { XrIcon } from '../Icon';
 import { typeIconMap } from '../../utils/index'
 defineOptions({

@@ -1,4 +1,4 @@
-import type { ButtonType } from "xier-element";
+import type { ButtonType } from "../Button/type";
 export interface popConfirmProps {
     title?: string;
     confirmButtonText?: string;

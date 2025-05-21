@@ -1,16 +1,53 @@
 {
   "name": "xier-element",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "description": "components library by Vue3 + TS",
+  "main": "./dist/umd/index.umd.cjs",
+  "type": "module",
+  "module": "'./dist/es/index.js",
+  "types": "'./dist/types/core/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/core/index.d.ts",
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.cjs"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "sideEffects": [
+    "./dist/index.css"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-only": "run-p  build-umd build-es",
+    "build": "run-s clean build-only move-style",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "build-es": "vite build --config vite.es.config.ts",
+    "move-style": "move-file ./dist/es/index.css ./dist/index.css",
+    "clean": "rimraf dist",
+    "release": "release-it"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.7.1",
   "dependencies": {
-    "@xier-element/components": "workspace:^"
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@popperjs/core": "^2.11.8",
+    "async-validator": "^4.2.5"
+  },
+  "devDependencies": {
+    "@xier-element/components": "workspace:^",
+    "vite-plugin-dts": "^3.7.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.19"
   }
 }

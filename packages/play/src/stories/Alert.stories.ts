@@ -1,5 +1,4 @@
-import type { Meta, StoryObj, ArgTypes } from "@storybook/vue3";
-import { fn, within, userEvent, expect } from "@storybook/test";
+import type { Meta, StoryFn } from "@storybook/vue3";
 import { XrAlert } from 'xier-element';
 
 export default {
@@ -51,7 +50,7 @@ const Template: StoryFn<typeof XrAlert> = (args) => ({
   `,
 });
 
-export const Default = Template.bind({});
+export const Default: StoryFn<typeof XrAlert> = Template.bind({});
 Default.args = {
     type: 'info',
     title: 'Default Alert',
@@ -62,7 +61,7 @@ Default.args = {
     effect: 'light',
 };
 
-export const Success = Template.bind({});
+export const Success: StoryFn<typeof XrAlert> = Template.bind({});
 Success.args = {
     type: 'success',
     title: 'Success Alert',
@@ -71,7 +70,7 @@ Success.args = {
     showIcon: true,
 };
 
-export const Warning = Template.bind({});
+export const Warning: StoryFn<typeof XrAlert> = Template.bind({});
 Warning.args = {
     type: 'warning',
     title: 'Warning Alert',
@@ -80,7 +79,7 @@ Warning.args = {
     showIcon: true,
 };
 
-export const danger = Template.bind({});
+export const danger: StoryFn<typeof XrAlert> = Template.bind({});
 danger.args = {
     type: 'danger',
     title: 'danger Alert',
@@ -89,7 +88,7 @@ danger.args = {
     showIcon: true,
 };
 
-export const CustomCloseText = Template.bind({});
+export const CustomCloseText: StoryFn<typeof XrAlert> = Template.bind({});
 CustomCloseText.args = {
     type: 'info',
     title: 'Custom Close Text',
