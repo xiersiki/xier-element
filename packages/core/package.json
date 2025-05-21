@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@xier-element/components": "workspace:^",
+    "release-it": "^19.0.2",
     "vite-plugin-dts": "^3.7.0"
   },
   "peerDependencies": {
