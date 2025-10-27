@@ -7,6 +7,11 @@ import vueJsx from "@vitejs/plugin-vue-jsx"; // 导入 Vue JSX 插件，支持�
 
 // https://vitejs.dev/config/ - Vite 配置文档链接
 export default defineConfig({
+    define: {
+        DEV: JSON.stringify(false),
+        PROD: JSON.stringify(false),
+        TEST: JSON.stringify(false)
+    },
     plugins: [vue(), vueJsx()], // 配置插件:
     // - vue(): 处理 .vue 单文件组件
     // - vueJsx(): 启用 JSX/TSX 支持

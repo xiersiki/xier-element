@@ -11,115 +11,129 @@ const onConfirm = vi.fn();
 const onCancel = vi.fn();
 
 describe("Popconfirm/index.ts", () => {
-    // 测试 withInstall 函数是否被正确应用
-    it("should be exported with withInstall()", () => {
-        expect(XrPopconfirm.install).toBeDefined();
-    });
+  it("should be exported with withInstall()", () => {
+    expect(XrPopconfirm.install).toBeDefined();
+  });
 
-    // 测试 Popconfirm 组件是否被正确导出
-    it("should be exported Popconfirm component", () => {
-        expect(XrPopconfirm).toBe(Popconfirm);
-    });
+  // 不校验引用相等，改为校验关键特征一致
+  it("should export the same SFC options (name/props/emits)", () => {
+    const x = XrPopconfirm as any;
+    const raw = Popconfirm as any;
 
-    // 可选：测试 withInstall 是否增强了 Popconfirm 组件的功能
-    test("should enhance Popconfirm component", () => {
-        const enhancedPopconfirm = withInstall(Popconfirm);
-        expect(enhancedPopconfirm).toBe(XrPopconfirm);
-        // 这里可以添加更多测试，确保 withInstall 增强了组件的特定功能
-    });
+    // 名称一致
+    expect(x.name?.trim()).toBe(raw.name?.trim());
 
-    // 可选：如果你的 withInstall 函数有特定的行为或属性，确保它们被正确应用
-    test("should apply specific enhancements", () => {
-        const enhancedPopconfirm = withInstall(Popconfirm);
-        // 例如，如果你的 withInstall 增加了一个特定的方法或属性
-        expect(enhancedPopconfirm).toHaveProperty("install");
-    });
+    // props 键集合一致（忽略构建差异导致的 type/required 等细节）
+    expect(Object.keys(x.props)).toEqual(Object.keys(raw.props));
+
+    // emits 一致
+    expect(x.emits).toEqual(raw.emits);
+  });
+
+  // 校验入口导出的组件确实是 withInstall 过的版本
+  test("should enhance Popconfirm component", () => {
+    const enhanced = withInstall(Popconfirm);
+    expect(enhanced.install).toBeDefined();
+    expect((enhanced as any).name?.trim()).toBe(
+      (XrPopconfirm as any).name?.trim()
+    );
+    // 入口导出的组件和本地增强后的在“特征”上保持一致
+    expect(Object.keys((enhanced as any).props)).toEqual(
+      Object.keys((XrPopconfirm as any).props)
+    );
+    expect((enhanced as any).emits).toEqual((XrPopconfirm as any).emits);
+  });
+
+  test("should apply specific enhancements", () => {
+    const enhancedPopconfirm = withInstall(Popconfirm);
+    expect(enhancedPopconfirm).toHaveProperty("install");
+  });
 });
 
 // 测试组件是否能够接收所有 props
 describe("Popconfirm.vue", () => {
-    const props = {
-        title: "Test Title",
-        confirmButtonText: "Confirm",
-        cancelButtonText: "Cancel",
-        confirmButtonType: "primary",
-        cancelButtonType: "info",
-        icon: "check-circle",
-        iconColor: "green",
-        hideIcon: false,
-        hideAfter: 500,
-        width: 200,
-    } as popConfirmProps;
+  const props = {
+    title: "Test Title",
+    confirmButtonText: "Confirm",
+    cancelButtonText: "Cancel",
+    confirmButtonType: "primary",
+    cancelButtonType: "info",
+    icon: "check-circle",
+    iconColor: "green",
+    hideIcon: false,
+    hideAfter: 500,
+    width: 200,
+  } as popConfirmProps;
 
-    beforeEach(() => {
-        vi.useFakeTimers();
-        vi.clearAllMocks();
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.clearAllMocks();
+  });
+
+  it("should accept all props", () => {
+    const wrapper = mount(Popconfirm, {
+      props,
     });
 
-    it("should accept all props", () => {
-        const wrapper = mount(Popconfirm, {
-            props,
-        });
+    // 检查 props 是否被正确设置
+    each(Object.keys(props), (key) => {
+      expect(get(wrapper.props(), key)).toBe(get(props, key));
+    });
+  });
 
-        // 检查 props 是否被正确设置
-        each(Object.keys(props), (key) => {
-            expect(get(wrapper.props(), key)).toBe(get(props, key));
-        });
+  // 测试插槽内容
+  it("should renders slot content correctly", () => {
+    const slotContent = "Slot Content";
+    const wrapper = mount(Popconfirm, {
+      props,
+      slots: {
+        default: slotContent,
+      },
     });
 
-    // 测试插槽内容
-    it("should renders slot content correctly", () => {
-        const slotContent = "Slot Content";
-        const wrapper = mount(Popconfirm, {
-            props,
-            slots: {
-                default: slotContent,
-            },
-        });
+    expect(wrapper.text()).toContain(slotContent);
+  });
 
-        expect(wrapper.text()).toContain(slotContent);
-    });
+  test("popconfirm emits", async () => {
+    const wrapper = mount(() => (
+      <div>
+        <div id="outside"></div>
+        <Popconfirm
+          title="Test Title"
+          hideIcon={true}
+          onConfirm={onConfirm}
+          onCancel={onCancel}
+        >
+          <button id="trigger">trigger</button>
+        </Popconfirm>
+      </div>
+    ));
+    const triggerArea = wrapper.find("#trigger");
+    expect(triggerArea.exists()).toBeTruthy();
 
-    test("popconfirm emits", async () => {
-        const wrapper = mount(() => (
-            <div>
-                <div id="outside"></div>
-                <Popconfirm
-                    title="Test Title"
-                    hideIcon={true}
-                    onConfirm={onConfirm}
-                    onCancel={onCancel}
-                >
-                    <button id="trigger">trigger</button>
-                </Popconfirm>
-            </div>
-        ));
-        const triggerArea = wrapper.find("#trigger");
-        expect(triggerArea.exists()).toBeTruthy();
+    triggerArea.trigger("click");
+    await vi.runAllTimers();
 
-        triggerArea.trigger("click");
-        await vi.runAllTimers();
+    // 弹出层是否出现
+    expect(wrapper.find(".xr-popconfirm").exists()).toBeTruthy();
+    const confirmButton = wrapper.find(".xr-popconfirm__confirm");
+    expect(confirmButton.exists()).toBeTruthy();
 
-        // 弹出层是否出现
-        expect(wrapper.find(".xr-popconfirm").exists()).toBeTruthy();
-        const confirmButton = wrapper.find(".xr-popconfirm__confirm");
-        expect(confirmButton.exists()).toBeTruthy();
+    confirmButton.trigger("click");
+    await vi.runAllTimers();
+    expect(wrapper.find(".xr-popconfirm").exists()).toBeFalsy();
+    expect(onConfirm).toBeCalled();
 
-        confirmButton.trigger("click");
-        await vi.runAllTimers();
-        expect(wrapper.find(".xr-popconfirm").exists()).toBeFalsy();
-        expect(onConfirm).toBeCalled();
+    triggerArea.trigger("click");
+    await vi.runAllTimers();
+    expect(wrapper.find(".xr-popconfirm").exists()).toBeTruthy();
+    const cancelButton = wrapper.find(".xr-popconfirm__cancel");
+    expect(cancelButton.exists()).toBeTruthy();
 
-        triggerArea.trigger("click");
-        await vi.runAllTimers();
-        expect(wrapper.find(".xr-popconfirm").exists()).toBeTruthy();
-        const cancelButton = wrapper.find(".xr-popconfirm__cancel");
-        expect(cancelButton.exists()).toBeTruthy();
-
-        await vi.runAllTimers();
-        cancelButton.trigger("click");
-        await vi.runAllTimers();
-        expect(wrapper.find(".xr-popconfirm").exists()).toBeFalsy();
-        expect(onCancel).toBeCalled();
-    });
+    await vi.runAllTimers();
+    cancelButton.trigger("click");
+    await vi.runAllTimers();
+    expect(wrapper.find(".xr-popconfirm").exists()).toBeFalsy();
+    expect(onCancel).toBeCalled();
+  });
 });

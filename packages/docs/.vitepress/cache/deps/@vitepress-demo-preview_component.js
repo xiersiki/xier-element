@@ -18,9 +18,9 @@ import {
   unref,
   watch,
   withCtx
-} from "./chunk-ATVCD2RX.js";
+} from "./chunk-IWYC5R2O.js";
 
-// ../../node_modules/.pnpm/@vitepress-demo-preview+com_3ede4c9cf55935c2bb19fe44fe2881be/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
+// ../../node_modules/.pnpm/@vitepress-demo-preview+com_352d2e1b4f45c0ed3cd02ffd674dbe0c/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
 var Z = (t, n) => {
   const e = t.__vccOpts || t;
   for (const [c, l] of n)

@@ -11,7 +11,7 @@
     "docs:dev": "pnpm --filter @xier-element/docs run dev",
     "docs:build": "pnpm --filter @xier-element/docs run build",
     "build-storybook": "storybook build",
-    "build": "pnpm --filter xier-element build"
+    "build": "cross-env NODE_ENV=production pnpm --filter xier-element build"
   },
   "keywords": [],
   "author": "",
@@ -49,12 +49,13 @@
     "xier-element": "workspace:^"
   },
   "devDependencies": {
+    "@types/shelljs": "^0.8.16",
     "@vue/test-utils": "^2.4.5",
-    "move-file-cli": "3.0.0",
+    "cross-env": "^7.0.3",
     "npm-run-all": "4.1.5",
     "release": "^6.3.1",
-    "rimraf": "^6.0.1",
     "sass": "^1.86.3",
+    "shelljs": "^0.10.0",
     "vite-plugin-dts": "^3.7.0"
   }
 }
