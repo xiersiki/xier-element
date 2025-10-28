@@ -6,7 +6,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "vitepress dev ./",
-    "build": "vitepress build ./"
+    "build": "pnpm --filter xier-element build && vitepress build ./"
   },
   "keywords": [],
   "author": "",
