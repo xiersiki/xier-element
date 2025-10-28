@@ -1,4 +1,4 @@
-# xier-element Monorepo
+# xier-element
 
 > 一个基于 **Vue 3 + TypeScript** 的企业级组件库及其配套工具集，涵盖组件开发、主题样式、文档站点与示例应用。
 
