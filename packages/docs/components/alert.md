@@ -7,8 +7,8 @@ next:
   text: Tooltip 提示
 
 prev:
-  link: /components/dropdown
-  text: Dropdown 下拉菜单
+  link: /components/tag
+  text: Tag 标签
 ---
 
 # Alert 提示

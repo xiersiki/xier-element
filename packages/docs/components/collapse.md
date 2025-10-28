@@ -3,8 +3,8 @@ title: Collapse
 description: Collapse 组件文档
 
 next:
-  link: components/dropdown
-  text: Dropdown 下拉菜单
+  link: components/icon
+  text: Icon 图标
 
 prev:
   link: components/button

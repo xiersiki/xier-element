@@ -3,12 +3,12 @@ title: Collapse
 description: Collapse 组件文档
 
 next:
-  link: /components/alert
-  text: Alert 提示
+  link: /components/message
+  text: Message 全局消息
 
 prev:
-  link: /components/collapse
-  text: Collapse 折叠面板
+  link: /components/tooltip
+  text: Tooltip 提示
 ---
 
 # Dropdown 下拉菜单

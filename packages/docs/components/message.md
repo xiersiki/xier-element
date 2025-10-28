@@ -7,8 +7,8 @@ next:
   text: Popconfirm 确认弹窗
 
 prev:
-  link: /components/icon
-  text: Icon 图标
+  link: /components/Dropdown
+  text: Dropdown 下拉菜单
 ---
 
 # Message 全局消息

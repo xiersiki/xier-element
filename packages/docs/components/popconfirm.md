@@ -2,9 +2,9 @@
 title: Popconfirm
 description: Popconfirm 组件文档
 
-next:
-  link: /components/tag
-  text: Tag 标签
+# next:
+#   link: /components/tag
+#   text: Tag 标签
 
 prev:
   link: /components/message

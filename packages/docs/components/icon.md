@@ -3,8 +3,8 @@ title: Icon
 description: Icon 组件文档
 
 next:
-  link: /components/message
-  text: Message 全局消息
+  link: /components/tag
+  text: Tag 标签
 
 prev:
   link: /components/collapse

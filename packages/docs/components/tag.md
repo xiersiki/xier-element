@@ -1,10 +1,15 @@
 ---
 title: Tag 标签
-titleEn: Tag
-prev: ./icon
-next: ./tooltip
----
+description: Tag 组件文档
 
+next:
+  link: /components/alert
+  text: Alert 提示
+
+prev:
+  link: /components/icon
+  text: Icon 图标
+---
 # Tag 标签
 
 用于标记和选择的标签组件。
