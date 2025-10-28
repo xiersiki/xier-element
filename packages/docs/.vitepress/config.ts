@@ -31,6 +31,8 @@ export default defineConfig({
         items: [
           { text: "Button 按钮", link: "components/button" },
           { text: "Collapse 折叠面板", link: "components/collapse" },
+          { text: "Icon 图标", link: "components/icon" },
+          { text: "Tag 标签", link: "components/tag" },
         ],
       },
       {
@@ -38,20 +40,25 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "Alert 提示", link: "components/alert" },
-          { text: "tooltip弹出", link: "components/tooltip" },
-          { text: "dropDown下拉菜单", link: "components/dropdown" },
+          { text: "Tooltip 弹出", link: "components/tooltip" },
+          { text: "Dropdown 下拉菜单", link: "components/dropdown" },
+          { text: "Message 消息", link: "components/message" },
+          { text: "Popconfirm 确认弹窗", link: "components/popconfirm" },
         ],
       },
       {
-        text: "表单组件",
+        text: "配置组件",
         collapsed: false,
-        items: [{ text: "Form 表单", link: "components/form" }],
+        items: [
+          {
+            text: "ConfigProvider 全局配置",
+            link: "components/configprovider",
+          },
+        ],
       },
     ],
 
-    socialLinks: [
-      { icon: "github", link: "" },
-    ],
+    socialLinks: [{ icon: "github", link: "" }],
   },
   markdown: {
     config(md) {
