@@ -83,7 +83,7 @@ const iconName = computed(() => props.type ? (typeIconMap.get(props.type) || 'ci
     width: fit-content;
     max-width: calc(100% - 32px);
     box-sizing: border-box;
-    min-width: 300px;
+    min-width: 200px;
     min-height: 40px;
     background: #fff;
     border: 1px solid #e5e6eb;

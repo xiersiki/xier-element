@@ -4,22 +4,22 @@
     <p>支持多种图标类型和大小。</p>
 
     <div class="icon-examples">
-      <x-icon name="home" size="16" />
-      <x-icon name="user" size="24" style="margin-left: 10px;" />
-      <x-icon name="settings" size="32" style="margin-left: 10px;" />
-      <x-icon name="search" size="48" style="margin-left: 10px;" />
+      <xr-icon icon="home" size="xs" />
+      <xr-icon icon="user" size="sm" style="margin-left: 10px;" />
+      <xr-icon icon="cog" size="lg" style="margin-left: 10px;" />
+      <xr-icon icon="search" size="xl" style="margin-left: 10px;" />
     </div>
 
     <div class="icon-colors">
-      <x-icon name="heart" color="red" />
-      <x-icon name="star" color="gold" style="margin-left: 10px;" />
-      <x-icon name="check" color="green" style="margin-left: 10px;" />
+      <xr-icon icon="heart" color="red" />
+      <xr-icon icon="star" color="gold" style="margin-left: 10px;" />
+      <xr-icon icon="check" color="green" style="margin-left: 10px;" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { XIcon } from 'xier-element'
+import { XrIcon } from 'xier-element'
 </script>
 
 <style scoped>

@@ -7,7 +7,26 @@ const GAP = 4
 const BASE_OFFSET = 25
 
 function layout() {
+    // 获取所有消息容器
+    const allContainers = Array.from(document.querySelectorAll('.xr-message-container'))
+    const currentContainer = document.querySelector('.xr-message-container') as HTMLElement
+
+    if (!currentContainer) return
+
     let offset = BASE_OFFSET
+
+    // 计算当前容器之前的所有容器的总高度
+    const currentIndex = allContainers.indexOf(currentContainer)
+    for (let i = 0; i < currentIndex; i++) {
+        const container = allContainers[i] as HTMLElement
+        const messages = container.querySelectorAll('.xr-message')
+        messages.forEach(msg => {
+            const msgEl = msg as HTMLElement
+            offset += msgEl.offsetHeight + GAP
+        })
+    }
+
+    // 设置当前容器的消息偏移
     instances.forEach(inst => {
         inst.props.offset = offset
         const el = inst.vm?.proxy?.$el as HTMLElement | undefined

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // App.vue
-import { XrMessage } from '../../components/Message'
+import { XrMessage } from 'xier-element'
 function notify() {
   XrMessage({ message: '这是一个消息.', type: 'info' })
 }

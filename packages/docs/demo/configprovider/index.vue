@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { XConfigProvider, XButton } from 'xier-element'
+import { XrConfigProvider, XrButton } from 'xier-element'
 
 const theme = ref('light')
 

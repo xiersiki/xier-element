@@ -3,8 +3,8 @@ title: Tooltip
 description: Tooltip 组件文档
 
 next:
-  link: /components/form
-  text: Form 表单
+  link: /components/Dropdown
+  text: Dropdown 下拉菜单
 
 prev:
   link: /components/popconfirm

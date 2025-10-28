@@ -3,8 +3,8 @@ title: Alert
 description: Alert 组件文档
 
 next:
-  link: /components/loading
-  text: Loading 加载
+  link: /components/Tooltip
+  text: Tooltip 提示
 
 prev:
   link: /components/dropdown

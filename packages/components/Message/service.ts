@@ -18,7 +18,14 @@ const BURST_WINDOW = 300; // ms，同一窗口内的条目视作一批
 const STAGGER_STEP = 120; // 每条错峰间隔
 function ensureContainer() {
   if (mounted) return;
+  // 检查是否已经存在容器（避免在不同上下文中重复创建）
+  const existingContainer = document.querySelector(".xr-message-container");
+  if (existingContainer) {
+    mounted = true;
+    return;
+  }
   const host = document.createElement("div");
+  host.className = "xr-message-container-host";
   document.body.appendChild(host);
   render(h(Container), host);
   mounted = true;
