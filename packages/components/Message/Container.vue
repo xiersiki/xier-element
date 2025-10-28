@@ -7,6 +7,9 @@ const GAP = 4
 const BASE_OFFSET = 25
 
 function layout() {
+    // 只在客户端环境中执行布局计算，避免 SSR 时的 document 未定义错误
+    if (typeof document === 'undefined') return;
+
     // 获取所有消息容器
     const allContainers = Array.from(document.querySelectorAll('.xr-message-container'))
     const currentContainer = document.querySelector('.xr-message-container') as HTMLElement
@@ -84,6 +87,6 @@ function handleAfterLeave(id: string) {
 }
 
 .xr-message-container :deep(.xr-message) {
-    pointer-events: auto;
+    pointer-events:auto;
 }
 </style>

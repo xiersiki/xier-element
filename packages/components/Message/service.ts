@@ -18,6 +18,9 @@ const BURST_WINDOW = 300; // ms，同一窗口内的条目视作一批
 const STAGGER_STEP = 120; // 每条错峰间隔
 function ensureContainer() {
   if (mounted) return;
+  // 只在客户端环境中创建容器，避免 SSR 时的 document 未定义错误
+  if (typeof document === "undefined") return;
+
   // 检查是否已经存在容器（避免在不同上下文中重复创建）
   const existingContainer = document.querySelector(".xr-message-container");
   if (existingContainer) {
