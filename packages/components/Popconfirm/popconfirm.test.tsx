@@ -3,9 +3,12 @@ import { mount } from "@vue/test-utils";
 import { withInstall } from "@xier-element/utils";
 import { each, get } from "lodash-es";
 import type { popConfirmProps } from "./type";
-import XrPopconfirm from "./popconfirm.vue";
-
 import Popconfirm from "./popconfirm.vue";
+
+const rawPopconfirmOptions = { ...(Popconfirm as any) };
+const createEnhancedPopconfirm = () =>
+  withInstall({ ...(rawPopconfirmOptions as any) });
+const XrPopconfirm = withInstall(Popconfirm);
 
 const onConfirm = vi.fn();
 const onCancel = vi.fn();
@@ -18,7 +21,7 @@ describe("Popconfirm/index.ts", () => {
   // 不校验引用相等，改为校验关键特征一致
   it("should export the same SFC options (name/props/emits)", () => {
     const x = XrPopconfirm as any;
-    const raw = Popconfirm as any;
+    const raw = rawPopconfirmOptions as any;
 
     // 名称一致
     expect(x.name?.trim()).toBe(raw.name?.trim());
@@ -32,7 +35,7 @@ describe("Popconfirm/index.ts", () => {
 
   // 校验入口导出的组件确实是 withInstall 过的版本
   test("should enhance Popconfirm component", () => {
-    const enhanced = withInstall(Popconfirm);
+    const enhanced = createEnhancedPopconfirm();
     expect(enhanced.install).toBeDefined();
     expect((enhanced as any).name?.trim()).toBe(
       (XrPopconfirm as any).name?.trim()
@@ -45,7 +48,7 @@ describe("Popconfirm/index.ts", () => {
   });
 
   test("should apply specific enhancements", () => {
-    const enhancedPopconfirm = withInstall(Popconfirm);
+    const enhancedPopconfirm = createEnhancedPopconfirm();
     expect(enhancedPopconfirm).toHaveProperty("install");
   });
 });
