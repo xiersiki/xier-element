@@ -4,8 +4,8 @@
   "description": "components library by Vue3 + TS",
   "main": "./dist/umd/index.umd.cjs",
   "type": "module",
-  "module": "'./dist/es/index.js",
-  "types": "'./dist/types/core/index.d.ts",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/core/index.d.ts",
   "files": [
     "dist"
   ],
