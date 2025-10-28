@@ -3,7 +3,7 @@ import { mount } from "@vue/test-utils";
 import { withInstall } from "@xier-element/utils";
 import { each, get } from "lodash-es";
 import type { popConfirmProps } from "./type";
-import { XrPopconfirm } from "xier-element";
+import XrPopconfirm from "./popconfirm.vue";
 
 import Popconfirm from "./popconfirm.vue";
 
