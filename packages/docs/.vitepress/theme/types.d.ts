@@ -5,3 +5,10 @@ declare module "@vitepress-demo-preview/component" {
   export const AntDesignContainer: Component;
   export const NaiveUIContainer: Component;
 }
+
+declare module "@vitepress-demo-preview/plugin" {
+  import { Plugin } from "vitepress";
+
+  export function containerPreview(): Plugin;
+  export function componentPreview(): Plugin;
+}

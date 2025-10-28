@@ -10,6 +10,14 @@ export default defineConfig({
   description: "基于Vue3 高仿 element-ui 组件库",
   appearance: false, // 关闭 darkMode @todo 深色模式完成后打开
   base: "/xier-element/",
+  vite: {
+    resolve: {
+      alias: {
+        "xier-element": new URL("../../../packages/core", import.meta.url)
+          .pathname,
+      },
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

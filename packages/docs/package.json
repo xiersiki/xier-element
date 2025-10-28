@@ -20,6 +20,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@vitepress-demo-preview/component": "^2.3.2",
-    "@vitepress-demo-preview/plugin": "^1.4.0"
+    "@vitepress-demo-preview/plugin": "^1.4.0",
+    "xier-element": "workspace:^"
   }
 }
