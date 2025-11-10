@@ -48,6 +48,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "Alert 提示", link: "components/alert" },
+          { text: "Loading 加载", link: "components/loading" },
           { text: "Tooltip 弹出", link: "components/tooltip" },
           { text: "Dropdown 下拉菜单", link: "components/dropdown" },
           { text: "Message 消息", link: "components/message" },

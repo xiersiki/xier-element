@@ -19,6 +19,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "async-validator": "^4.2.5",
-    "nanoid": "^5.1.5"
+    "nanoid": "^5.1.5",
+    "@xier-element/hooks": "workspace:^"
   }
 }
