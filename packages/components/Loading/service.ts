@@ -68,7 +68,11 @@ function createLoadingComponent(options: LoadingOptionsResolved) {
     setText,
   };
 }
-
+/**
+ * 处理配置参数，确定挂载目标
+ * @param options
+ * @returns
+ */
 function resolveOptions(options: LoadingOptions): LoadingOptionsResolved {
   // SSR 兼容性检查
   if (typeof document === "undefined") {
